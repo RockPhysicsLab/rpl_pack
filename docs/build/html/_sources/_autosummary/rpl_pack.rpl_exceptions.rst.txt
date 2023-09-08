@@ -1,4 +1,4 @@
-rpl\_pack.rpl\_exceptions
+﻿rpl\_pack.rpl\_exceptions
 =========================
 
 .. automodule:: rpl_pack.rpl_exceptions
@@ -24,6 +24,7 @@ rpl\_pack.rpl\_exceptions
    
       RPLException
       RPLInvalidRequestException
+      RPLServerException
       RPLUserCredentialsDeniedException
    
    

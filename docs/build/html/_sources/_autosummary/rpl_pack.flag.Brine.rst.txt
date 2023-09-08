@@ -24,6 +24,7 @@
       ~Brine.resistivity_brine
       ~Brine.saturated_vapor_pressure
       ~Brine.saturated_vapor_temperature
+      ~Brine.solubility_co2_water
       ~Brine.solubility_gas_brine
       ~Brine.solubility_gas_water
       ~Brine.velocity_brine

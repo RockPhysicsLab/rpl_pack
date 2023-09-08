@@ -147,25 +147,28 @@ called.</p>
 <tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.saturated_vapor_temperature" title="rpl_pack.flag.Brine.saturated_vapor_temperature"><code class="xref py py-obj docutils literal notranslate"><span class="pre">saturated_vapor_temperature</span></code></a></p></td>
 <td><p>Calculate saturated vapor temperature of brine at given pressure (MPa).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_gas_brine" title="rpl_pack.flag.Brine.solubility_gas_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_gas_brine</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_co2_water" title="rpl_pack.flag.Brine.solubility_co2_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_co2_water</span></code></a></p></td>
+<td><p>Calculate saturated vapor temperature of brine at given pressure (MPa).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_gas_brine" title="rpl_pack.flag.Brine.solubility_gas_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_gas_brine</span></code></a></p></td>
 <td><p>Calculate solubility of gas in brine (gwr) at given temperature (C), pressure (ppm), and salinity (ppm).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_gas_water" title="rpl_pack.flag.Brine.solubility_gas_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_gas_water</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_gas_water" title="rpl_pack.flag.Brine.solubility_gas_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_gas_water</span></code></a></p></td>
 <td><p>Calculate solubility of gas in pure water (gwr) at given temperature (C) and pressure (ppm).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_brine" title="rpl_pack.flag.Brine.velocity_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_brine</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_brine" title="rpl_pack.flag.Brine.velocity_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_brine</span></code></a></p></td>
 <td><p>Calculate velocity of brine at given temperature (C), pressure (MPa), salinity (ppm), NaCl (weight %), KCl (weight %), and CaCl2 (weight %).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_water" title="rpl_pack.flag.Brine.velocity_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_water</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_water" title="rpl_pack.flag.Brine.velocity_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_water</span></code></a></p></td>
 <td><p>Calculate velcity of pure water at given temperature (C) and pressure (MPa).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_water_CO2" title="rpl_pack.flag.Brine.velocity_water_CO2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_water_CO2</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.velocity_water_CO2" title="rpl_pack.flag.Brine.velocity_water_CO2"><code class="xref py py-obj docutils literal notranslate"><span class="pre">velocity_water_CO2</span></code></a></p></td>
 <td><p>Calculate velocity of water+CO2 at given temperature (C), pressure (MPa), gwr (L/L).</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.viscosity_brine" title="rpl_pack.flag.Brine.viscosity_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">viscosity_brine</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.viscosity_brine" title="rpl_pack.flag.Brine.viscosity_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">viscosity_brine</span></code></a></p></td>
 <td><p>Calculate viscosity of brine at given temperature (C) and salinity (ppm).</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.viscosity_water" title="rpl_pack.flag.Brine.viscosity_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">viscosity_water</span></code></a></p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.viscosity_water" title="rpl_pack.flag.Brine.viscosity_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">viscosity_water</span></code></a></p></td>
 <td><p>Calculate viscosity of water at given temperature (C).</p></td>
 </tr>
 </tbody>
@@ -332,6 +335,23 @@ salinity (ppm).</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Saturated vapor temperature of brine at given pressure.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="rpl_pack.flag.Brine.solubility_co2_water">
+<span class="sig-name descname"><span class="pre">solubility_co2_water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#rpl_pack.flag.Brine.solubility_co2_water" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate saturated vapor temperature of brine at given pressure (MPa).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>temperature</strong> (<em>float</em>) – Temperature of water in C.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>CO2 solubility in H20 at given temperature.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>float</p>

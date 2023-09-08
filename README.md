@@ -1,3 +1,5 @@
-# Test RPL package to demo rpl-pack usage.
+# Welcome To rpl-pack's Official Download Page
 
-This is the official repository for the Rock Physics Lab Web Service API Python package.
+rpl-pack is a Python package for interacting with [RPL Web Service](https://rock-physics-lab.herokuapp.com/).
+
+To get started using the RPL Web Service via rpl-pack head over to the [official documentation](https://rpl-pack.readthedocs.io/en/latest/index.html).

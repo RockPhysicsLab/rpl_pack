@@ -6,6 +6,8 @@ FLAG program interfaces.
 import sys
 import pathlib
 
+from json import JSONDecodeError
+
 from typing import Any
 
 import numpy as np
@@ -13,7 +15,7 @@ import matplotlib.pyplot as plt
 
 from rpl_pack.rpl import _RPLBase
 from rpl_pack.utils import encode_arrays, decode_arrays
-from rpl_pack.rpl_exceptions import RPLUserCredentialsDeniedException
+from rpl_pack.rpl_exceptions import RPLUserCredentialsDeniedException, RPLServerException
 
 
 class _FLAGBase(_RPLBase):
@@ -77,7 +79,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['vel_w']
+        try:
+            dec_arr = decode_arrays(resp.json())['vel_w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def density_water(self, temperature: float, pressure: float) -> float:
         """Calculate density of pure water at given temperature (C) and pressure (MPa).
@@ -95,7 +101,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['rho_w']
+        try:
+            dec_arr = decode_arrays(resp.json())['rho_w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def modulus_water(self, temperature: float, pressure: float) -> float:
         """Calculate modulus of pure water at given temperature (C) and pressure (MPa).
@@ -113,7 +123,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['mod_w']
+        try:
+            dec_arr = decode_arrays(resp.json())['mod_w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def velocity_brine(self, temperature: float, pressure: float, salinity: float,
                        NaCl: float, KCl: float, CaCl2: float) -> float:
@@ -145,7 +159,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['vel_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['vel_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
     
     def density_brine(self, temperature: float, pressure: float, salinity: float,
                       NaCl: float, KCl: float, CaCl2: float) -> float:
@@ -177,7 +195,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['rho_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['rho_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def modulus_brine(self, temperature: float, pressure: float, salinity: float,
                       NaCl: float, KCl: float, CaCl2: float) -> float:
@@ -210,7 +232,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['mod_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['mod_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def velocity_water_CO2(self, temperature: float, pressure: float, gwr: float) -> float:
         """Calculate velocity of water+CO2 at given temperature (C), pressure (MPa), gwr (L/L).
@@ -230,7 +256,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['vel_wCO2']
+        try:
+            dec_arr = decode_arrays(resp.json())['vel_wCO2']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def density_water_CO2(self, temperature: float, pressure: float, gwr: float) -> float:
         """Calculate density of water+CO2 at given temperature (C), pressure (MPa), gwr (L/L).
@@ -250,7 +280,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['rho_wCO2']
+        try:
+            dec_arr = decode_arrays(resp.json())['rho_wCO2']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def viscosity_water(self, temperature: float) -> float:
         """Calculate viscosity of water at given temperature (C).
@@ -266,7 +300,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['visc_w']
+        try:
+            dec_arr = decode_arrays(resp.json())['visc_w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def viscosity_brine(self, temperature: float, salinity: float) -> float:
         """Calculate viscosity of brine at given temperature (C) and salinity (ppm).
@@ -284,7 +322,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['visc_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['visc_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def solubility_gas_water(self, temperature: float, pressure: float) -> float:
         """Calculate solubility of gas in pure water (gwr) at given temperature (C)
@@ -303,7 +345,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['sol_w']
+        try:
+            dec_arr = decode_arrays(resp.json())['sol_w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def solubility_gas_brine(self, temperature: float, pressure: float, salinity: float) -> float:
         """Calculate solubility of gas in brine (gwr) at given temperature (C),
@@ -325,7 +371,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['sol_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['sol_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def resistivity_brine(self, temperature: float, salinity: float) -> float:
         """Calculate resistivity of brine at given temperature (C) and
@@ -344,7 +394,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['res_b']
+        try:
+            dec_arr = decode_arrays(resp.json())['res_b']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def saturated_vapor_pressure(self, temperature: float) -> float:
         """Calculate saturated vapor pressure of brine at given temperature (C).
@@ -360,7 +414,11 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['svp']
+        try:
+            dec_arr = decode_arrays(resp.json())['svp']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     def saturated_vapor_temperature(self, pressure: float) -> float:
         """Calculate saturated vapor temperature of brine at given pressure (MPa).
@@ -376,7 +434,33 @@ class Brine(FLAG):
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
 
-        return decode_arrays(resp.json())['svt']
+        try:
+            dec_arr = decode_arrays(resp.json())['svt']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
+
+    
+    def solubility_co2_water(self, temperature: float) -> float:
+        """Calculate saturated vapor temperature of brine at given pressure (MPa).
+        
+        :param temperature: Temperature of water in C.
+        :type temperature: float
+        :return: CO2 solubility in H20 at given temperature.
+        :rtype: float
+        """   
+        self.props = {"temperature": temperature}
+        enc_arr = encode_arrays(["temperature"], [temperature])
+        resp = self._post("solubility_co2_water/", data=enc_arr)
+        if not self._is_authentic(resp):
+            raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")
+
+        try:
+            dec_arr = decode_arrays(resp.json())['sol_CO2w']
+            return dec_arr
+        except JSONDecodeError:
+            raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
+
 
     # def calculate_properties(self, salinity: float = 50000., NaCl: float = 100.,
     #                          KCl: float = 0., CaCl2: float = 0., temp: float = 15.6,
