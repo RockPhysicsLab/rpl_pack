@@ -442,7 +442,7 @@ class Brine(FLAG):
 
     
     def solubility_co2_water(self, temperature: float) -> float:
-        """Calculate saturated vapor temperature of brine at given pressure (MPa).
+        """Calculate solubility of CO2 in H20 at a given temperature (C).
         
         :param temperature: Temperature of water in C.
         :type temperature: float
