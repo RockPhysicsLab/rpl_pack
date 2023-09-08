@@ -441,16 +441,16 @@ class Brine(FLAG):
             raise RPLServerException(f"The server denied your request:\n\t{resp.text}")
 
     
-    def solubility_co2_water(self, temperature: float) -> float:
-        """Calculate solubility of CO2 in H20 at a given temperature (C).
+    def solubility_co2_water(self, temperature: float, pressure: float) -> float:
+        """Calculate solubility of CO2 in H20 at a given temperature (C) and Pressure (MPa).
         
         :param temperature: Temperature of water in C.
         :type temperature: float
         :return: CO2 solubility in H20 at given temperature.
         :rtype: float
         """   
-        self.props = {"temperature": temperature}
-        enc_arr = encode_arrays(["temperature"], [temperature])
+        self.props = {"temperature": temperature, "pressure": pressure}
+        enc_arr = encode_arrays(["temperature", "pressure"], [temperature, pressure])
         resp = self._post("solubility_co2_water/", data=enc_arr)
         if not self._is_authentic(resp):
             raise RPLUserCredentialsDeniedException("User credentials were denied by the server.")

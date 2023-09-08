@@ -148,7 +148,7 @@ called.</p>
 <td><p>Calculate saturated vapor temperature of brine at given pressure (MPa).</p></td>
 </tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_co2_water" title="rpl_pack.flag.Brine.solubility_co2_water"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_co2_water</span></code></a></p></td>
-<td><p>Calculate solubility of CO2 in H20 at a given temperature (C).</p></td>
+<td><p>Calculate solubility of CO2 in H20 at a given temperature (C) and Pressure (MPa).</p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#rpl_pack.flag.Brine.solubility_gas_brine" title="rpl_pack.flag.Brine.solubility_gas_brine"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solubility_gas_brine</span></code></a></p></td>
 <td><p>Calculate solubility of gas in brine (gwr) at given temperature (C), pressure (ppm), and salinity (ppm).</p></td>
@@ -344,8 +344,8 @@ salinity (ppm).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="rpl_pack.flag.Brine.solubility_co2_water">
-<span class="sig-name descname"><span class="pre">solubility_co2_water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#rpl_pack.flag.Brine.solubility_co2_water" title="Permalink to this definition"></a></dt>
-<dd><p>Calculate solubility of CO2 in H20 at a given temperature (C).</p>
+<span class="sig-name descname"><span class="pre">solubility_co2_water</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temperature</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pressure</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#rpl_pack.flag.Brine.solubility_co2_water" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate solubility of CO2 in H20 at a given temperature (C) and Pressure (MPa).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>temperature</strong> (<em>float</em>) – Temperature of water in C.</p>
