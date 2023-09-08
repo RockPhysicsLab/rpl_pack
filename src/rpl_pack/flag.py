@@ -311,7 +311,7 @@ class Brine(FLAG):
         
         :param temperature: Temperature of brine in C.
         :type temperature: float
-        :param pressure: Salinity of brine in ppm.
+        :param salinity: Salinity of brine in ppm.
         :type temperature: float
         :return: Viscosity of brine at given temperature and salinity.
         :rtype: float
@@ -330,7 +330,7 @@ class Brine(FLAG):
 
     def solubility_gas_water(self, temperature: float, pressure: float) -> float:
         """Calculate solubility of gas in pure water (gwr) at given temperature (C)
-        and pressure (ppm).
+        and pressure (MPa).
         
         :param temperature: Temperature of water in C.
         :type temperature: float
@@ -442,7 +442,8 @@ class Brine(FLAG):
 
     
     def solubility_co2_water(self, temperature: float, pressure: float) -> float:
-        """Calculate solubility of CO2 in H20 at a given temperature (C) and Pressure (MPa).
+        """Calculate solubility of CO2 in H20 at a given temperature (C)
+        and Pressure (MPa).
         
         :param temperature: Temperature of water in C.
         :type temperature: float
