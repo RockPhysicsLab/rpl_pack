@@ -16,6 +16,7 @@ to visualize some data.
 .. code-block:: python
 
     import numpy as np
+    import matplotlib.pyplot as plt
     
     from rpl_pack.flag import Brine
 
